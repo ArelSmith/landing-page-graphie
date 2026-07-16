@@ -78,7 +78,11 @@ body {
   border-radius: 50%;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
-  transition: background-color 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
   z-index: 10;
   text-decoration: none;
 }
@@ -388,7 +392,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #0c0c0e;
-  padding: 120px 0;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -397,7 +401,7 @@ body {
 
 .slider-header {
   max-width: 800px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 30px auto;
   text-align: center;
   padding: 0 20px;
 }
@@ -586,5 +590,162 @@ body {
   }
   .card-title-slider {
     font-size: 24px;
+  }
+}
+
+/* Parallax Text Section Styling */
+.parallax-text-section {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #ffffff;
+  z-index: 5;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(190, 117, 255, 0.08) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(0, 229, 255, 0.08) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.parallax-text-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 0 30px;
+}
+
+.parallax-text {
+  font-size: 68px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.parallax-text .word {
+  display: inline-block;
+  opacity: 0.15;
+  will-change: opacity;
+  margin-right: 0.15em;
+  background: linear-gradient(135deg, #0f0f14 30%, #4a4a52 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.parallax-text-section p {
+  font-size: 18px;
+  color: #4a4a52;
+  max-width: 680px;
+  line-height: 1.6;
+  margin: 32px auto 0 auto;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .parallax-text-section {
+    height: 60vh;
+  }
+  .parallax-text {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+  .parallax-text-section p {
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+}
+
+/* Testimonial Section Styling */
+.testimonial-section {
+  background-color: #ffffff;
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.testimonial-quote {
+  font-size: 64px;
+  font-weight: 800;
+  color: #0f0f14;
+  max-width: 950px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 48px;
+}
+
+.profile-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  text-align: left;
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* filter: grayscale(100%); */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f0f14;
+  line-height: 1.2;
+}
+
+.profile-title {
+  font-size: 13px;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 80px 0;
+  }
+  .testimonial-quote {
+    font-size: 34px;
+    padding: 0 20px;
+    margin-bottom: 36px;
+  }
+  .testimonial-quote .highlight-no-time {
+    -webkit-text-stroke: 5px #6e00ff;
+    text-shadow: 2px 2px 0px #6e00ff;
   }
 }

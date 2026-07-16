@@ -189,13 +189,46 @@
       </div>
     </section>
 
+    <!-- Parallax Text Section -->
+    <section class="parallax-text-section">
+      <div class="parallax-bg"></div>
+      <div
+        class="container text-center d-flex flex-column align-items-center justify-content-center"
+      >
+        <h2 class="parallax-text">
+          <span class="word">“And</span>
+          <span class="word">we're</span>
+          <span class="word">still</span>
+          <span class="word">here</span>
+          <span class="word">for</span>
+          <span class="word">future</span>
+          <span class="word">enhancements.”</span>
+        </h2>
+        <p>
+          We continue to support you with feature enhancements, system
+          improvements, maintenance, performance optimization, and ongoing
+          technical assistance, ensuring your digital solutions evolve alongside
+          your business.
+        </p>
+        <div class="profile-card mt-5">
+          <img src="./assets/ariel.jpeg" alt="Ariel" class="profile-avatar" />
+          <div class="profile-info">
+            <span class="profile-name">Ariel</span>
+            <span class="profile-title">CEO, Graphie</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Horizontal Parallax Slider Section -->
     <section class="horizontal-slider-section" id="horizontal-slider-sec">
       <div class="slider-header">
         <span class="badge-slider">Showcase</span>
-        <h2>Explore our services.</h2>
+        <h2>One partner. Every digital solution</h2>
         <p>
-          We provide custom solutions using cutting-edge technologies to scale your business operations and experience.
+          Instead of coordinating with multiple vendors, work with one trusted
+          technology partner that understands your business from start to
+          finish.
         </p>
       </div>
 
@@ -214,7 +247,8 @@
               <span class="card-tag">Enterprise</span>
               <h3 class="card-title-slider">Integrated ERP</h3>
               <p class="card-desc-slider">
-                All-in-one resource planning platform to streamline operations, finance, and human resources in real-time.
+                All-in-one resource planning platform to streamline operations,
+                finance, and human resources in real-time.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -235,7 +269,8 @@
               <span class="card-tag">Intelligence</span>
               <h3 class="card-title-slider">AI Integration & Automation</h3>
               <p class="card-desc-slider">
-                Supercharge your business with custom LLM integrations, intelligent workflows, and autonomous agents.
+                Supercharge your business with custom LLM integrations,
+                intelligent workflows, and autonomous agents.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -256,7 +291,8 @@
               <span class="card-tag">Management</span>
               <h3 class="card-title-slider">CRM with Gamification</h3>
               <p class="card-desc-slider">
-                Boost team sales and engage customers with built-in achievement tracking, leaderboards, and rewards.
+                Boost team sales and engage customers with built-in achievement
+                tracking, leaderboards, and rewards.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -274,7 +310,8 @@
               <span class="card-tag">Connectivity</span>
               <h3 class="card-title-slider">IoT Solutions</h3>
               <p class="card-desc-slider">
-                Connect smart hardware and machinery, monitor diagnostics, and automate actions through central dashboards.
+                Connect smart hardware and machinery, monitor diagnostics, and
+                automate actions through central dashboards.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -293,9 +330,12 @@
             <div class="card-num">05</div>
             <div class="card-content-wrap">
               <span class="card-tag">Immersive</span>
-              <h3 class="card-title-slider">Virtual & Augmented Reality (VR/AR)</h3>
+              <h3 class="card-title-slider">
+                Virtual & Augmented Reality (VR/AR)
+              </h3>
               <p class="card-desc-slider">
-                Create immersive training, product walkthroughs, and spatial applications to wow customers.
+                Create immersive training, product walkthroughs, and spatial
+                applications to wow customers.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -316,7 +356,8 @@
               <span class="card-tag">Web3 & Trust</span>
               <h3 class="card-title-slider">Blockchain Integration</h3>
               <p class="card-desc-slider">
-                Implement smart contracts, secure distributed ledgers, and tokenized assets to build trust.
+                Implement smart contracts, secure distributed ledgers, and
+                tokenized assets to build trust.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -337,7 +378,8 @@
               <span class="card-tag">Tailored</span>
               <h3 class="card-title-slider">And many more...</h3>
               <p class="card-desc-slider">
-                Whatever technology your vision demands, our experienced engineers are ready to build it.
+                Whatever technology your vision demands, our experienced
+                engineers are ready to build it.
               </p>
             </div>
             <div class="card-footer-slider">
@@ -353,6 +395,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
       gsap.registerPlugin(ScrollTrigger);
+
+      // Parallax Text Container Motion
+      gsap.fromTo(
+        ".parallax-text",
+        { y: 100 },
+        {
+          y: -100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".parallax-text-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        },
+      );
+
+      // Staggered Word Highlight Animation
+      gsap.to(".parallax-text .word", {
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: ".parallax-text-section",
+          start: "top 65%",
+          end: "bottom 100%",
+          scrub: 0.5,
+        },
+      });
+
+      gsap.fromTo(
+        ".parallax-bg",
+        { y: -30 },
+        {
+          y: 30,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".parallax-text-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        },
+      );
 
       const cards = gsap.utils.toArray(".stack-card");
 
